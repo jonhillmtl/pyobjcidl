@@ -1,0 +1,410 @@
+Created by PLY version 3.4 (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> classlist
+Rule 1     argument -> INT ID
+Rule 2     argument -> STRING ID
+Rule 3     argumentlist -> argument
+Rule 4     argumentlist -> argumentlist COMMA argument
+Rule 5     return -> INT
+Rule 6     return -> STRING
+Rule 7     return -> VOID
+Rule 8     function -> FUNCTION return ID LPAREN argumentlist RPAREN SEMICOLON
+Rule 9     functionlist -> <empty>
+Rule 10    functionlist -> function
+Rule 11    functionlist -> functionlist function
+Rule 12    class -> CLASS ID LCURLY memberlist functionlist RCURLY SEMICOLON
+Rule 13    classlist -> class
+Rule 14    classlist -> classlist class
+Rule 15    member -> INT ID SEMICOLON
+Rule 16    member -> STRING ID SEMICOLON
+Rule 17    memberlist -> <empty>
+Rule 18    memberlist -> member
+Rule 19    memberlist -> memberlist member
+
+Terminals, with rules where they appear
+
+CLASS                : 12
+COMMA                : 4
+FUNCTION             : 8
+ID                   : 1 2 8 12 15 16
+INT                  : 1 5 15
+LCURLY               : 12
+LPAREN               : 8
+RCURLY               : 12
+RPAREN               : 8
+SEMICOLON            : 8 12 15 16
+STRING               : 2 6 16
+VOID                 : 7
+error                : 
+
+Nonterminals, with rules where they appear
+
+argument             : 3 4
+argumentlist         : 4 8
+class                : 13 14
+classlist            : 14 0
+function             : 10 11
+functionlist         : 11 12
+member               : 18 19
+memberlist           : 12 19
+return               : 8
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . classlist
+    (13) classlist -> . class
+    (14) classlist -> . classlist class
+    (12) class -> . CLASS ID LCURLY memberlist functionlist RCURLY SEMICOLON
+
+    CLASS           shift and go to state 3
+
+    classlist                      shift and go to state 1
+    class                          shift and go to state 2
+
+state 1
+
+    (0) S' -> classlist .
+    (14) classlist -> classlist . class
+    (12) class -> . CLASS ID LCURLY memberlist functionlist RCURLY SEMICOLON
+
+    CLASS           shift and go to state 3
+
+    class                          shift and go to state 4
+
+state 2
+
+    (13) classlist -> class .
+
+    CLASS           reduce using rule 13 (classlist -> class .)
+    $end            reduce using rule 13 (classlist -> class .)
+
+
+state 3
+
+    (12) class -> CLASS . ID LCURLY memberlist functionlist RCURLY SEMICOLON
+
+    ID              shift and go to state 5
+
+
+state 4
+
+    (14) classlist -> classlist class .
+
+    CLASS           reduce using rule 14 (classlist -> classlist class .)
+    $end            reduce using rule 14 (classlist -> classlist class .)
+
+
+state 5
+
+    (12) class -> CLASS ID . LCURLY memberlist functionlist RCURLY SEMICOLON
+
+    LCURLY          shift and go to state 6
+
+
+state 6
+
+    (12) class -> CLASS ID LCURLY . memberlist functionlist RCURLY SEMICOLON
+    (17) memberlist -> .
+    (18) memberlist -> . member
+    (19) memberlist -> . memberlist member
+    (15) member -> . INT ID SEMICOLON
+    (16) member -> . STRING ID SEMICOLON
+
+  ! shift/reduce conflict for INT resolved as shift
+  ! shift/reduce conflict for STRING resolved as shift
+    FUNCTION        reduce using rule 17 (memberlist -> .)
+    RCURLY          reduce using rule 17 (memberlist -> .)
+    INT             shift and go to state 9
+    STRING          shift and go to state 8
+
+  ! INT             [ reduce using rule 17 (memberlist -> .) ]
+  ! STRING          [ reduce using rule 17 (memberlist -> .) ]
+
+    memberlist                     shift and go to state 10
+    member                         shift and go to state 7
+
+state 7
+
+    (18) memberlist -> member .
+
+    INT             reduce using rule 18 (memberlist -> member .)
+    STRING          reduce using rule 18 (memberlist -> member .)
+    FUNCTION        reduce using rule 18 (memberlist -> member .)
+    RCURLY          reduce using rule 18 (memberlist -> member .)
+
+
+state 8
+
+    (16) member -> STRING . ID SEMICOLON
+
+    ID              shift and go to state 11
+
+
+state 9
+
+    (15) member -> INT . ID SEMICOLON
+
+    ID              shift and go to state 12
+
+
+state 10
+
+    (12) class -> CLASS ID LCURLY memberlist . functionlist RCURLY SEMICOLON
+    (19) memberlist -> memberlist . member
+    (9) functionlist -> .
+    (10) functionlist -> . function
+    (11) functionlist -> . functionlist function
+    (15) member -> . INT ID SEMICOLON
+    (16) member -> . STRING ID SEMICOLON
+    (8) function -> . FUNCTION return ID LPAREN argumentlist RPAREN SEMICOLON
+
+  ! shift/reduce conflict for FUNCTION resolved as shift
+    RCURLY          reduce using rule 9 (functionlist -> .)
+    INT             shift and go to state 9
+    STRING          shift and go to state 8
+    FUNCTION        shift and go to state 15
+
+  ! FUNCTION        [ reduce using rule 9 (functionlist -> .) ]
+
+    function                       shift and go to state 13
+    member                         shift and go to state 14
+    functionlist                   shift and go to state 16
+
+state 11
+
+    (16) member -> STRING ID . SEMICOLON
+
+    SEMICOLON       shift and go to state 17
+
+
+state 12
+
+    (15) member -> INT ID . SEMICOLON
+
+    SEMICOLON       shift and go to state 18
+
+
+state 13
+
+    (10) functionlist -> function .
+
+    RCURLY          reduce using rule 10 (functionlist -> function .)
+    FUNCTION        reduce using rule 10 (functionlist -> function .)
+
+
+state 14
+
+    (19) memberlist -> memberlist member .
+
+    INT             reduce using rule 19 (memberlist -> memberlist member .)
+    STRING          reduce using rule 19 (memberlist -> memberlist member .)
+    FUNCTION        reduce using rule 19 (memberlist -> memberlist member .)
+    RCURLY          reduce using rule 19 (memberlist -> memberlist member .)
+
+
+state 15
+
+    (8) function -> FUNCTION . return ID LPAREN argumentlist RPAREN SEMICOLON
+    (5) return -> . INT
+    (6) return -> . STRING
+    (7) return -> . VOID
+
+    INT             shift and go to state 21
+    STRING          shift and go to state 20
+    VOID            shift and go to state 22
+
+    return                         shift and go to state 19
+
+state 16
+
+    (12) class -> CLASS ID LCURLY memberlist functionlist . RCURLY SEMICOLON
+    (11) functionlist -> functionlist . function
+    (8) function -> . FUNCTION return ID LPAREN argumentlist RPAREN SEMICOLON
+
+    RCURLY          shift and go to state 24
+    FUNCTION        shift and go to state 15
+
+    function                       shift and go to state 23
+
+state 17
+
+    (16) member -> STRING ID SEMICOLON .
+
+    INT             reduce using rule 16 (member -> STRING ID SEMICOLON .)
+    STRING          reduce using rule 16 (member -> STRING ID SEMICOLON .)
+    FUNCTION        reduce using rule 16 (member -> STRING ID SEMICOLON .)
+    RCURLY          reduce using rule 16 (member -> STRING ID SEMICOLON .)
+
+
+state 18
+
+    (15) member -> INT ID SEMICOLON .
+
+    INT             reduce using rule 15 (member -> INT ID SEMICOLON .)
+    STRING          reduce using rule 15 (member -> INT ID SEMICOLON .)
+    FUNCTION        reduce using rule 15 (member -> INT ID SEMICOLON .)
+    RCURLY          reduce using rule 15 (member -> INT ID SEMICOLON .)
+
+
+state 19
+
+    (8) function -> FUNCTION return . ID LPAREN argumentlist RPAREN SEMICOLON
+
+    ID              shift and go to state 25
+
+
+state 20
+
+    (6) return -> STRING .
+
+    ID              reduce using rule 6 (return -> STRING .)
+
+
+state 21
+
+    (5) return -> INT .
+
+    ID              reduce using rule 5 (return -> INT .)
+
+
+state 22
+
+    (7) return -> VOID .
+
+    ID              reduce using rule 7 (return -> VOID .)
+
+
+state 23
+
+    (11) functionlist -> functionlist function .
+
+    RCURLY          reduce using rule 11 (functionlist -> functionlist function .)
+    FUNCTION        reduce using rule 11 (functionlist -> functionlist function .)
+
+
+state 24
+
+    (12) class -> CLASS ID LCURLY memberlist functionlist RCURLY . SEMICOLON
+
+    SEMICOLON       shift and go to state 26
+
+
+state 25
+
+    (8) function -> FUNCTION return ID . LPAREN argumentlist RPAREN SEMICOLON
+
+    LPAREN          shift and go to state 27
+
+
+state 26
+
+    (12) class -> CLASS ID LCURLY memberlist functionlist RCURLY SEMICOLON .
+
+    CLASS           reduce using rule 12 (class -> CLASS ID LCURLY memberlist functionlist RCURLY SEMICOLON .)
+    $end            reduce using rule 12 (class -> CLASS ID LCURLY memberlist functionlist RCURLY SEMICOLON .)
+
+
+state 27
+
+    (8) function -> FUNCTION return ID LPAREN . argumentlist RPAREN SEMICOLON
+    (3) argumentlist -> . argument
+    (4) argumentlist -> . argumentlist COMMA argument
+    (1) argument -> . INT ID
+    (2) argument -> . STRING ID
+
+    INT             shift and go to state 30
+    STRING          shift and go to state 29
+
+    argumentlist                   shift and go to state 28
+    argument                       shift and go to state 31
+
+state 28
+
+    (8) function -> FUNCTION return ID LPAREN argumentlist . RPAREN SEMICOLON
+    (4) argumentlist -> argumentlist . COMMA argument
+
+    RPAREN          shift and go to state 33
+    COMMA           shift and go to state 32
+
+
+state 29
+
+    (2) argument -> STRING . ID
+
+    ID              shift and go to state 34
+
+
+state 30
+
+    (1) argument -> INT . ID
+
+    ID              shift and go to state 35
+
+
+state 31
+
+    (3) argumentlist -> argument .
+
+    RPAREN          reduce using rule 3 (argumentlist -> argument .)
+    COMMA           reduce using rule 3 (argumentlist -> argument .)
+
+
+state 32
+
+    (4) argumentlist -> argumentlist COMMA . argument
+    (1) argument -> . INT ID
+    (2) argument -> . STRING ID
+
+    INT             shift and go to state 30
+    STRING          shift and go to state 29
+
+    argument                       shift and go to state 36
+
+state 33
+
+    (8) function -> FUNCTION return ID LPAREN argumentlist RPAREN . SEMICOLON
+
+    SEMICOLON       shift and go to state 37
+
+
+state 34
+
+    (2) argument -> STRING ID .
+
+    RPAREN          reduce using rule 2 (argument -> STRING ID .)
+    COMMA           reduce using rule 2 (argument -> STRING ID .)
+
+
+state 35
+
+    (1) argument -> INT ID .
+
+    RPAREN          reduce using rule 1 (argument -> INT ID .)
+    COMMA           reduce using rule 1 (argument -> INT ID .)
+
+
+state 36
+
+    (4) argumentlist -> argumentlist COMMA argument .
+
+    RPAREN          reduce using rule 4 (argumentlist -> argumentlist COMMA argument .)
+    COMMA           reduce using rule 4 (argumentlist -> argumentlist COMMA argument .)
+
+
+state 37
+
+    (8) function -> FUNCTION return ID LPAREN argumentlist RPAREN SEMICOLON .
+
+    RCURLY          reduce using rule 8 (function -> FUNCTION return ID LPAREN argumentlist RPAREN SEMICOLON .)
+    FUNCTION        reduce using rule 8 (function -> FUNCTION return ID LPAREN argumentlist RPAREN SEMICOLON .)
+
+WARNING: 
+WARNING: Conflicts:
+WARNING: 
+WARNING: shift/reduce conflict for INT in state 6 resolved as shift
+WARNING: shift/reduce conflict for STRING in state 6 resolved as shift
+WARNING: shift/reduce conflict for FUNCTION in state 10 resolved as shift
