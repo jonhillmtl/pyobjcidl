@@ -1,0 +1,7 @@
+class POSimple
+{
+    int simple;
+    int index;
+    function void simple_func(int test);
+};
+	

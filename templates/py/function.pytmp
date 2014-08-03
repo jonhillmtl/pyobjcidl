@@ -1,0 +1,2 @@
+    def {{ function.name }}(self{% for argument in function.arguments %}{% include '/py/argument.pytmp' %}{% endfor %}):
+        pass

@@ -1,7 +1,11 @@
+import os
 import sys
-import ply
 from optparse import OptionParser
 from plyer import Plyer
+
+from jinja2 import Environment, PackageLoader
+env = Environment(loader=PackageLoader('pyobjcidl', 'templates'))
+print env
 
 DEFAULT_PY_DEST_DIR = './py/'
 DEFAULT_OBJC_DEST_DIR = './objc/'
@@ -31,12 +35,28 @@ def main():
 	    print "Cycle through"
 	    pass
 	
+def output_py(plyer, sourcefile, pydir):
+    base = os.path.basename(sourcefile)
+    base = os.path.splitext(base)[0]
+    print base
+    
+    pydest = "%s.py" % (os.path.join(pydir, base))
+    print pydest
+    
+    template = env.get_template('/py/file.pytmp')
+    pyfile = open(pydest, 'w+')
+    pyfile.write(template.render(plyer=plyer))
+    pyfile.close()
+    
+def output_objc(plyer, sourcefile, objcdir):
+    pass
+    
 def poidlgen(sourcefile, pydestdir, objcdestdir):
-    # print sourcefile, pydestdir, objcdestdir
     plyer = Plyer()
     sf = open(sourcefile, 'r')
     plyer.feed(sf.read())
-    plyer.output(sourcefile, pydestdir, objcdestdir)
+    output_py(plyer, sourcefile, pydestdir)
+    output_objc(plyer, sourcefile, objcdestdir)
 
 if __name__ == "__main__":
 	main()

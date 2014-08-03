@@ -1,4 +1,9 @@
-led / optimized / DLL files
+parser.out
+parsetab.py
+scratch
+
+
+# led / optimized / DLL files
 __pycache__/
 *.py[cod]
 
