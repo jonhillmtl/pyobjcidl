@@ -5,7 +5,6 @@ from plyer import Plyer
 
 from jinja2 import Environment, PackageLoader
 env = Environment(loader=PackageLoader('pyobjcidl', 'templates'))
-print env
 
 DEFAULT_PY_DEST_DIR = './py/'
 DEFAULT_OBJC_DEST_DIR = './objc/'
@@ -38,11 +37,8 @@ def main():
 def output_py(plyer, sourcefile, pydir):
     base = os.path.basename(sourcefile)
     base = os.path.splitext(base)[0]
-    print base
     
     pydest = "%s.py" % (os.path.join(pydir, base))
-    print pydest
-    
     template = env.get_template('/py/file.pytmp')
     pyfile = open(pydest, 'w+')
     pyfile.write(template.render(plyer=plyer))

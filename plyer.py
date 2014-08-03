@@ -89,7 +89,12 @@ class Plyer(object):
        
     def p_member_expr(self, p):
         '''member : INT ID SEMICOLON
-                  | STRING ID SEMICOLON'''
+                  | STRING ID SEMICOLON
+                  | MUTABLE_ARRAY ID SEMICOLON
+                  | ARRAY ID SEMICOLON
+                  | MUTABLE_DICT ID SEMICOLON
+                  | DICT ID SEMICOLON
+                  | BOOLEAN ID SEMICOLON'''
         m = Member()
         m.type = p[1]
         m.name = p[2]
@@ -114,54 +119,4 @@ class Plyer(object):
         parser = yacc.yacc(module=self)
         parser.parse(text,lexer=lexer.lexer)
         
-        print self.classes
-    
-    """
-    def output_to_objc(self, objcfile):
-        output = ''
-        for c in self.classes:
-            objcfile.write('#import <Foundation/Foundation.h>\n\n')
-            objcfile.write("@interface %s : NSObject\n{\n" % c.name)
-            for m in c.members:
-                if m.type == 'int':
-                    objcfile.write('\t%s %s;\n' % (m.type,m. name))
-                elif m.type == 'string':
-                    objcfile.write('\tNSString * %s;\n' % (m. name))
-            objcfile.write('}\n')
-            objcfile.write('\n\n')
-            for f in c.functions:
-                objcfile.write('-(id) %s;\n' % f.name)
-            objcfile.write('@end')
-        
-    def output_to_py(self, pyfile):
-        output = ''
-        for c in self.classes:
-            output += "class %s:\n" % c.name
-            for m in c.members:
-                output += '\t%s = None\n' % m.name
-            output += '\n\n'
-            for f in c.functions:
-                output += '\tdef %s(self' % f.name
-                for a in f.arguments:
-                    output += ', %s' % a.name
-                output += '): pass\n'
-        pyfile.write(output)
-    """
-        
-    def output(self, sourcefile, pydir, objcdir):
-        base = os.path.basename(sourcefile)
-        base = os.path.splitext(base)[0]
-        print base
-        
-        pydest = "%s.py" % (os.path.join(pydir, base))
-        print pydest
-        pyfile = open(pydest, 'w+')
-        self.output_to_py(pyfile)
-        pyfile.close()
-        
-        objcdest = "%s.h" % (os.path.join(objcdir, base))
-        print objcdest
-        objcfile = open(objcdest, 'w+')
-        self.output_to_objc(objcfile)
-        objcfile.close()
-        
+        # print self.classes        

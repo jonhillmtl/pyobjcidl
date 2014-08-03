@@ -37,6 +37,11 @@ class Lexer(object):
            'class' : 'CLASS',
            'int' : 'INT',
            'string' : 'STRING',
+           'boolean' : 'BOOLEAN',
+           'mutable_array' : 'MUTABLE_ARRAY',
+           'array' : 'ARRAY',
+           'mutable_dict' : 'MUTABLE_DICT',
+           'dict' : 'DICT',
            'void' : 'VOID'
     }
     tokens = ['LPAREN','RPAREN', 'RCURLY', 'LCURLY', 'COMMA', 'SEMICOLON', 'ID']

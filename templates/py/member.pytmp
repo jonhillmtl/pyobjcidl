@@ -1,1 +1,15 @@
+{% if member.type == 'int' %}    
+    {{ member.name }} = 0
+{% else %}{% if member.type == 'string' %}
     {{ member.name }} = ''
+{% else %}{% if member.type == 'boolean' %}
+    {{ member.name }} = False
+{% else %}{% if member.type == 'mutable_array' %}
+    {{ member.name }} = []
+{% else %}{% if member.type == 'array' %}
+    {{ member.name }} = []
+{% else %}{% if member.type == 'mutable_dict' %}
+    {{ member.name }} = {}
+{% else %}{% if member.type == 'dict' %}
+    {{ member.name }} = {}
+{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}
