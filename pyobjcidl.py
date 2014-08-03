@@ -34,24 +34,26 @@ def main():
 	    print "Cycle through"
 	    pass
 	
+def output(template, plyer, dest):
+    f = open(dest, 'w+')
+    f.write(template.render(plyer=plyer).replace('\n\n\n', '\n\n').replace('\n\n', '\n'))
+    f.close()
+    
 def output_py(plyer, base, objcdir):
     dest = "%s.h" % (os.path.join(objcdir, base))
     template = env.get_template('/objc/file.objctmp')
-    f = open(dest, 'w+')
-    f.write(template.render(plyer=plyer))
-    f.close()
+    output(template, plyer, dest)
     
 def output_objc(plyer, base, objcdir):
     dest = "%s.py" % (os.path.join(objcdir, base))
     template = env.get_template('/py/file.pytmp')
-    f = open(dest, 'w+')
-    f.write(template.render(plyer=plyer))
-    f.close()
+    output(template, plyer, dest)
     
 def poidlgen(sourcefile, pydestdir, objcdestdir):
     plyer = Plyer()
     sf = open(sourcefile, 'r')
     plyer.feed(sf.read())
+    sf.close()
     
     base = os.path.basename(sourcefile)
     base = os.path.splitext(base)[0]

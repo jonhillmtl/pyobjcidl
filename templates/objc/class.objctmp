@@ -1,0 +1,5 @@
+@interface {{ class.name }} : NSObject
+{% for member in class.members %}{% include '/objc/member.objctmp' %}
+{% endfor %}
+
+@end

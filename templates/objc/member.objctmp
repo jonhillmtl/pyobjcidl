@@ -1,0 +1,15 @@
+{% if member.type == 'int' %}    
+@property NSInteger {{ member.name }};
+{% else %}{% if member.type == 'string' %}
+@property (strong, nonatomic) NSString * {{ member.name }};
+{% else %}{% if member.type == 'boolean' %}
+@property BOOL {{ member.name }};
+{% else %}{% if member.type == 'mutable_array' %}
+@property (strong, nonatomic) NSMutableArray * {{ member.name }};
+{% else %}{% if member.type == 'array' %}
+@property (strong, nonatomic) NSArray * {{ member.name }};
+{% else %}{% if member.type == 'mutable_dict' %}
+@property (strong, nonatomic) NSMutableDictionary * {{ member.name }};
+{% else %}{% if member.type == 'dict' %}
+@property (strong, nonatomic) NSDictionary * {{ member.name }};
+{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}{% endif %}

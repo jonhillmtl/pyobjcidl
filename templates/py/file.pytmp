@@ -5,6 +5,8 @@
 {% include '/py/class.pytmp' %}
 {% endfor %}
 
+
+
 def main():
     print 'valid'
     
