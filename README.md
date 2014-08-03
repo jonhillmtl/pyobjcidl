@@ -6,6 +6,10 @@ Using the python pyobjc adapter, users will be able to define python-Objective-C
 
 This repo will contain a fully functional introductory example, as well.
 
+## Usage
+* `python pyojbcidl.py --source-file=./test/simple.poidl --py-dest-dir='./test/' --objc-dest-dir='./test'`
+* 
+
 ## Status
 
 * Very developmental. 
@@ -13,11 +17,11 @@ This repo will contain a fully functional introductory example, as well.
 * A handful of types are supported, more to be added.
 * It is unknown if the generated .py and .h files will link against each other. That's the next big step.
 
-
 ## Overview
 
 * Based on ply for the lexing and parsing.
-* 
+* Uses jinja as templates for generated .py and .h files
+* Uses py2app to generate a plugin that can be referenced from a Cocoa project
 
 A .poidl (py to objc interface definition language) file will look like this:
 
