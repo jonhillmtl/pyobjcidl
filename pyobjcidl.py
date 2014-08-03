@@ -34,25 +34,29 @@ def main():
 	    print "Cycle through"
 	    pass
 	
-def output_py(plyer, sourcefile, pydir):
-    base = os.path.basename(sourcefile)
-    base = os.path.splitext(base)[0]
+def output_py(plyer, base, objcdir):
+    dest = "%s.h" % (os.path.join(objcdir, base))
+    template = env.get_template('/objc/file.objctmp')
+    f = open(dest, 'w+')
+    f.write(template.render(plyer=plyer))
+    f.close()
     
-    pydest = "%s.py" % (os.path.join(pydir, base))
+def output_objc(plyer, base, objcdir):
+    dest = "%s.py" % (os.path.join(objcdir, base))
     template = env.get_template('/py/file.pytmp')
-    pyfile = open(pydest, 'w+')
-    pyfile.write(template.render(plyer=plyer))
-    pyfile.close()
-    
-def output_objc(plyer, sourcefile, objcdir):
-    pass
+    f = open(dest, 'w+')
+    f.write(template.render(plyer=plyer))
+    f.close()
     
 def poidlgen(sourcefile, pydestdir, objcdestdir):
     plyer = Plyer()
     sf = open(sourcefile, 'r')
     plyer.feed(sf.read())
-    output_py(plyer, sourcefile, pydestdir)
-    output_objc(plyer, sourcefile, objcdestdir)
+    
+    base = os.path.basename(sourcefile)
+    base = os.path.splitext(base)[0]
+    output_py(plyer, base, pydestdir)
+    output_objc(plyer, base, objcdestdir)
 
 if __name__ == "__main__":
 	main()
