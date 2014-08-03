@@ -13,6 +13,31 @@ This repo will contain a fully functional introductory example, as well.
 * A handful of types are supported, more to be added.
 * It is unknown if the generated .py and .h files will link against each other. That's the next big step.
 
+
+## Overview
+
+* Based on ply for the lexing and parsing.
+* 
+
+A .poidl (py to objc interface definition language) file will look like this:
+
+```
+class POSimple
+{
+    int simple_int;
+    string simple_string;
+    dict simple_dict;
+    mutable_dict simple_mutable_dict;
+    array simple_array;
+    mutable_array simple_mutable_array;
+    boolean simple_boolean;
+    function void simple_func(int test);
+};
+	
+```
+
+It's a C++-esque, curly-bracket and semi-colon language;
+
 ## Wish list
 * optional arguments
 * automatic init functions generated in python and objective-c
