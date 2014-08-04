@@ -10,6 +10,7 @@ class Lexer(object):
     t_RCURLY = r'\}'
     t_COMMA = r','
     t_SEMICOLON = r';'
+    errors = 0
 
     # A regular expression rule with some action code
     def t_NUMBER(self, t):
@@ -22,7 +23,7 @@ class Lexer(object):
         t.lexer.lineno += len(t.value)
 
     def t_ID(self, t):
-        r'[a-zA-Z_][a-zA-Z_0-9]*'
+        r'[a-zA-Z][a-zA-Z0-9]*'
         t.type = self.reserved.get(t.value,'ID')    # Check for reserved words
         return t
 
@@ -31,6 +32,7 @@ class Lexer(object):
     def t_error(self, t):
         print "Illegal character '%s'" % t.value[0]
         t.lexer.skip(1)
+        self.errors = self.errors + 1
 
     reserved = {
            'function' : 'FUNCTION',
