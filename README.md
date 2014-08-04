@@ -7,7 +7,7 @@ Using the python pyobjc adapter, users will be able to define python-Objective-C
 This repo will contain a fully functional introductory example, as well.
 
 ## Usage
-* `python pyojbcidl.py --source-file=./test/simple.poidl --py-dest-dir='./test/' --objc-dest-dir='./test'`
+* `python pyobjcidl.py --source-file=./test/simple.poidl --py-dest-dir='./test/' --objc-dest-dir='./test'`
 * 
 
 ## Status
@@ -20,6 +20,8 @@ This repo will contain a fully functional introductory example, as well.
 
 ## TODO 
 
+- [ ] add requirements.txt
+- [ ] implement whole directory scanning
 - [ ] import statements
 - [ ] enforce no _ in func or variable names
 - [ ] generate objc decorators in python
