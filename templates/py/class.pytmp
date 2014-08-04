@@ -1,4 +1,4 @@
-class {{ class.name }}:
+class {{ class.name }}(NSObject):
 {% for member in class.members %}{% include '/py/member.pytmp' %}
 {% endfor %}
 
