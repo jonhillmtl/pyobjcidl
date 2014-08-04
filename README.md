@@ -22,7 +22,8 @@ This repo will contain a fully functional introductory example, as well.
 
 - [x] add requirements.txt
 - [x] implement whole directory scanning
-- [ ] import statements
+- [x] import statements
+- [ ] output import statements as appropriate
 - [x] enforce no _ in func or variable names
 - [ ] generate objc decorators in python
 - [ ] don't generate the _concrete class if it already exists
