@@ -20,10 +20,10 @@ This repo will contain a fully functional introductory example, as well.
 
 ## TODO 
 
-- [ ] add requirements.txt
-- [ ] implement whole directory scanning
-- [ ] import statements
-- [ ] enforce no _ in func or variable names
+- [x] add requirements.txt
+- [x] implement whole directory scanning
+- [] import statements
+- [x] enforce no _ in func or variable names
 - [ ] generate objc decorators in python
 - [ ] don't generate the _concrete class if it already exists
 - [ ] maybe parse the concrete class using a separate lexer to find out what functions it already contains
