@@ -7,7 +7,7 @@ Using the python pyobjc adapter, users will be able to define python-Objective-C
 This repo will contain a fully functional introductory example, as well.
 
 ## Usage
-* `python pyojbcidl.py --source-file=./test/simple.poidl --py-dest-dir='./test/' --objc-dest-dir='./test'`
+* `python pyobjcidl.py --source-file=./test/simple.poidl --py-dest-dir='./test/' --objc-dest-dir='./test'`
 * 
 
 ## Status
@@ -16,6 +16,24 @@ This repo will contain a fully functional introductory example, as well.
 * Right now, rudimentary .py and .h files are being generated.
 * A handful of types are supported, more to be added.
 * It is unknown if the generated .py and .h files will link against each other. That's the next big step.
+
+
+## TODO 
+
+- [x] add requirements.txt
+- [x] implement whole directory scanning
+- [x] import statements
+- [ ] output import statements as appropriate
+- [x] enforce no _ in func or variable names
+- [ ] generate objc decorators in python
+- [ ] don't generate the _concrete class if it already exists
+- [ ] maybe parse the concrete class using a separate lexer to find out what functions it already contains
+- [x] a python program that can call the main from all generated python classes
+- [ ] instructions on using py2App
+- [ ] working example
+- [ ] setup.py
+- [ ] unit tests
+
 
 ## Overview
 
@@ -28,14 +46,7 @@ A .poidl (py to objc interface definition language) file will look like this:
 ```
 class POSimple
 {
-    int simple_int;
-    string simple_string;
-    dict simple_dict;
-    mutable_dict simple_mutable_dict;
-    array simple_array;
-    mutable_array simple_mutable_array;
-    boolean simple_boolean;
-    function void simple_func(int test);
+    int simple;
 };
 	
 ```
