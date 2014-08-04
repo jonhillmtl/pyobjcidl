@@ -22,12 +22,12 @@ This repo will contain a fully functional introductory example, as well.
 
 - [x] add requirements.txt
 - [x] implement whole directory scanning
-- [] import statements
+- [ ] import statements
 - [x] enforce no _ in func or variable names
 - [ ] generate objc decorators in python
 - [ ] don't generate the _concrete class if it already exists
 - [ ] maybe parse the concrete class using a separate lexer to find out what functions it already contains
-- [ ] a python program that can call the main from all generated python classes
+- [x] a python program that can call the main from all generated python classes
 - [ ] instructions on using py2App
 - [ ] working example
 - [ ] setup.py
@@ -45,14 +45,7 @@ A .poidl (py to objc interface definition language) file will look like this:
 ```
 class POSimple
 {
-    int simple_int;
-    string simple_string;
-    dict simple_dict;
-    mutable_dict simple_mutable_dict;
-    array simple_array;
-    mutable_array simple_mutable_array;
-    boolean simple_boolean;
-    function void simple_func(int test);
+    int simple;
 };
 	
 ```
