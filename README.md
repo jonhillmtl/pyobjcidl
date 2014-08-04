@@ -17,6 +17,20 @@ This repo will contain a fully functional introductory example, as well.
 * A handful of types are supported, more to be added.
 * It is unknown if the generated .py and .h files will link against each other. That's the next big step.
 
+
+## TODO 
+
+- [ ] import statements
+- [ ] enforce no _ in func or variable names
+- [ ] generate objc decorators in python
+- [ ] don't generate the _concrete class if it already exists
+- [ ] maybe parse the concrete class using a separate lexer to find out what functions it already contains
+- [ ] a python program that can call the main from all generated python classes
+- [ ] instructions on using py2App
+- [ ] working example
+- [ ] setup.py
+- [ ] unit tests
+- 
 ## Overview
 
 * Based on ply for the lexing and parsing.
