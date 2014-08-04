@@ -1,9 +1,0 @@
-class POExample
-{
-    int index;
-    string name;
-    
-    function void one_arg_int(int test1);
-    function void two_arg_int_string(int test1, string test2);
-};
-	

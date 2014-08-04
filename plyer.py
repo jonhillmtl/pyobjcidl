@@ -39,20 +39,15 @@ class Member(object):
 	
 class Plyer(object):
 	start = 'file'
-	classes = []
-	functions = []
-	arguments = []
-	members = []
-	imports = []
-	errors = 0
-				
-	def clear(self):
+	
+	def __init__(self):
 		self.classes = []
-		self.imports = []
 		self.functions = []
 		self.arguments = []
 		self.members = []
-		 
+		self.imports = []
+		self.errors = 0
+						 
 	def p_argument_expr(self, p):
 		'''argument : INT ID
 				  | STRING ID'''
@@ -62,7 +57,8 @@ class Plyer(object):
 		self.arguments.append(a)
 						
 	def p_argumentlist_expr(self, p):
-		'''argumentlist : argument
+		'''argumentlist : 
+						| argument
 						| argumentlist COMMA argument'''
 		pass # _dump_p(p)
 		

@@ -1,5 +1,0 @@
-class POExample
-{
-    function void text1(int test1);
-};
-	

@@ -42,21 +42,20 @@ def output(template, plyer, dest):
 	f.write(template.render(plyer=plyer).replace('\n\n\n', '\n\n').replace('\n\n', '\n'))
 	f.close()
 	
-def output_py(plyer, base, objcdir):
+def output_py(plyer, base, pydir):
+	dest = "%s.py" % (os.path.join(pydir, base))
+	print("****** Generated %s" % dest)
+	template = env.get_template('/py/file.pytmp')
+	output(template, plyer, dest)
+	
+def output_objc(plyer, base, objcdir):
 	dest = "%s.h" % (os.path.join(objcdir, base))
 	print("****** Generated %s" % dest)
 	template = env.get_template('/objc/file.objctmp')
 	output(template, plyer, dest)
 	
-def output_objc(plyer, base, objcdir):
-	dest = "%s.py" % (os.path.join(objcdir, base))
-	print("****** Generated %s" % dest)
-	template = env.get_template('/py/file.pytmp')
-	output(template, plyer, dest)
-	
 def poidlgen(sourcefile, pydestdir, objcdestdir):
 	plyer = Plyer()
-	plyer.clear()
 	
 	print("*** Generating for %s" % sourcefile)
 	

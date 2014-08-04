@@ -7,85 +7,87 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FC2C06AC198DAD9700209CAE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC2C06AB198DAD9700209CAE /* Foundation.framework */; };
-		FC2C06AF198DAD9700209CAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC2C06AE198DAD9700209CAE /* main.m */; };
-		FC2C06B3198DAD9700209CAE /* egpyobjc.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC2C06B2198DAD9700209CAE /* egpyobjc.1 */; };
+		FC814FBF198FD63400B82DF9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC814FBE198FD63400B82DF9 /* Foundation.framework */; };
+		FC814FC2198FD63500B82DF9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC814FC1198FD63500B82DF9 /* main.m */; };
+		FC814FC6198FD63500B82DF9 /* POExample.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = FC814FC5198FD63500B82DF9 /* POExample.1 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		FC2C06A6198DAD9700209CAE /* CopyFiles */ = {
+		FC814FB9198FD63400B82DF9 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
-				FC2C06B3198DAD9700209CAE /* egpyobjc.1 in CopyFiles */,
+				FC814FC6198FD63500B82DF9 /* POExample.1 in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		FC2C06A8198DAD9700209CAE /* egpyobjc */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = egpyobjc; sourceTree = BUILT_PRODUCTS_DIR; };
-		FC2C06AB198DAD9700209CAE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		FC2C06AE198DAD9700209CAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FC2C06B1198DAD9700209CAE /* egpyobjc-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "egpyobjc-Prefix.pch"; sourceTree = "<group>"; };
-		FC2C06B2198DAD9700209CAE /* egpyobjc.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = egpyobjc.1; sourceTree = "<group>"; };
-		FC2C06B9198DADDE00209CAE /* 1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = 1.h; sourceTree = "<group>"; };
+		FC814FBB198FD63400B82DF9 /* POExample */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = POExample; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC814FBE198FD63400B82DF9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FC814FC1198FD63500B82DF9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FC814FC4198FD63500B82DF9 /* POExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "POExample-Prefix.pch"; sourceTree = "<group>"; };
+		FC814FC5198FD63500B82DF9 /* POExample.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = POExample.1; sourceTree = "<group>"; };
+		FC814FCC198FD66300B82DF9 /* POExample.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POExample.h; sourceTree = "<group>"; };
+		FC814FCD198FD98600B82DF9 /* POExample.plugin */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = POExample.plugin; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		FC2C06A5198DAD9700209CAE /* Frameworks */ = {
+		FC814FB8198FD63400B82DF9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC2C06AC198DAD9700209CAE /* Foundation.framework in Frameworks */,
+				FC814FBF198FD63400B82DF9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FC2C069F198DAD9700209CAE = {
+		FC814FB2198FD63400B82DF9 = {
 			isa = PBXGroup;
 			children = (
-				FC2C06AD198DAD9700209CAE /* egpyobjc */,
-				FC2C06AA198DAD9700209CAE /* Frameworks */,
-				FC2C06A9198DAD9700209CAE /* Products */,
+				FC814FC0198FD63500B82DF9 /* POExample */,
+				FC814FBD198FD63400B82DF9 /* Frameworks */,
+				FC814FBC198FD63400B82DF9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		FC2C06A9198DAD9700209CAE /* Products */ = {
+		FC814FBC198FD63400B82DF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				FC2C06A8198DAD9700209CAE /* egpyobjc */,
+				FC814FBB198FD63400B82DF9 /* POExample */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		FC2C06AA198DAD9700209CAE /* Frameworks */ = {
+		FC814FBD198FD63400B82DF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				FC2C06AB198DAD9700209CAE /* Foundation.framework */,
+				FC814FBE198FD63400B82DF9 /* Foundation.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		FC2C06AD198DAD9700209CAE /* egpyobjc */ = {
+		FC814FC0198FD63500B82DF9 /* POExample */ = {
 			isa = PBXGroup;
 			children = (
-				FC2C06B9198DADDE00209CAE /* 1.h */,
-				FC2C06AE198DAD9700209CAE /* main.m */,
-				FC2C06B2198DAD9700209CAE /* egpyobjc.1 */,
-				FC2C06B0198DAD9700209CAE /* Supporting Files */,
+				FC814FCD198FD98600B82DF9 /* POExample.plugin */,
+				FC814FCC198FD66300B82DF9 /* POExample.h */,
+				FC814FC1198FD63500B82DF9 /* main.m */,
+				FC814FC5198FD63500B82DF9 /* POExample.1 */,
+				FC814FC3198FD63500B82DF9 /* Supporting Files */,
 			);
-			path = egpyobjc;
+			path = POExample;
 			sourceTree = "<group>";
 		};
-		FC2C06B0198DAD9700209CAE /* Supporting Files */ = {
+		FC814FC3198FD63500B82DF9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				FC2C06B1198DAD9700209CAE /* egpyobjc-Prefix.pch */,
+				FC814FC4198FD63500B82DF9 /* POExample-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -93,62 +95,62 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		FC2C06A7198DAD9700209CAE /* egpyobjc */ = {
+		FC814FBA198FD63400B82DF9 /* POExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FC2C06B6198DAD9700209CAE /* Build configuration list for PBXNativeTarget "egpyobjc" */;
+			buildConfigurationList = FC814FC9198FD63500B82DF9 /* Build configuration list for PBXNativeTarget "POExample" */;
 			buildPhases = (
-				FC2C06A4198DAD9700209CAE /* Sources */,
-				FC2C06A5198DAD9700209CAE /* Frameworks */,
-				FC2C06A6198DAD9700209CAE /* CopyFiles */,
+				FC814FB7198FD63400B82DF9 /* Sources */,
+				FC814FB8198FD63400B82DF9 /* Frameworks */,
+				FC814FB9198FD63400B82DF9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = egpyobjc;
-			productName = egpyobjc;
-			productReference = FC2C06A8198DAD9700209CAE /* egpyobjc */;
+			name = POExample;
+			productName = POExample;
+			productReference = FC814FBB198FD63400B82DF9 /* POExample */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		FC2C06A0198DAD9700209CAE /* Project object */ = {
+		FC814FB3198FD63400B82DF9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0510;
-				ORGANIZATIONNAME = jonhill;
+				ORGANIZATIONNAME = "Jon Hill";
 			};
-			buildConfigurationList = FC2C06A3198DAD9700209CAE /* Build configuration list for PBXProject "egpyobjc" */;
+			buildConfigurationList = FC814FB6198FD63400B82DF9 /* Build configuration list for PBXProject "POExample" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = FC2C069F198DAD9700209CAE;
-			productRefGroup = FC2C06A9198DAD9700209CAE /* Products */;
+			mainGroup = FC814FB2198FD63400B82DF9;
+			productRefGroup = FC814FBC198FD63400B82DF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FC2C06A7198DAD9700209CAE /* egpyobjc */,
+				FC814FBA198FD63400B82DF9 /* POExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		FC2C06A4198DAD9700209CAE /* Sources */ = {
+		FC814FB7198FD63400B82DF9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FC2C06AF198DAD9700209CAE /* main.m in Sources */,
+				FC814FC2198FD63500B82DF9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		FC2C06B4198DAD9700209CAE /* Debug */ = {
+		FC814FC7198FD63500B82DF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -186,7 +188,7 @@
 			};
 			name = Debug;
 		};
-		FC2C06B5198DAD9700209CAE /* Release */ = {
+		FC814FC8198FD63500B82DF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -218,20 +220,20 @@
 			};
 			name = Release;
 		};
-		FC2C06B7198DAD9700209CAE /* Debug */ = {
+		FC814FCA198FD63500B82DF9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "egpyobjc/egpyobjc-Prefix.pch";
+				GCC_PREFIX_HEADER = "POExample/POExample-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		FC2C06B8198DAD9700209CAE /* Release */ = {
+		FC814FCB198FD63500B82DF9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "egpyobjc/egpyobjc-Prefix.pch";
+				GCC_PREFIX_HEADER = "POExample/POExample-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -239,24 +241,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		FC2C06A3198DAD9700209CAE /* Build configuration list for PBXProject "egpyobjc" */ = {
+		FC814FB6198FD63400B82DF9 /* Build configuration list for PBXProject "POExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC2C06B4198DAD9700209CAE /* Debug */,
-				FC2C06B5198DAD9700209CAE /* Release */,
+				FC814FC7198FD63500B82DF9 /* Debug */,
+				FC814FC8198FD63500B82DF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FC2C06B6198DAD9700209CAE /* Build configuration list for PBXNativeTarget "egpyobjc" */ = {
+		FC814FC9198FD63500B82DF9 /* Build configuration list for PBXNativeTarget "POExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FC2C06B7198DAD9700209CAE /* Debug */,
-				FC2C06B8198DAD9700209CAE /* Release */,
+				FC814FCA198FD63500B82DF9 /* Debug */,
+				FC814FCB198FD63500B82DF9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = FC2C06A0198DAD9700209CAE /* Project object */;
+	rootObject = FC814FB3198FD63400B82DF9 /* Project object */;
 }

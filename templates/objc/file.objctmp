@@ -1,7 +1,6 @@
 #import <Foundation/Foundation.h>
 
 
-
 {% for class in plyer.classes %}
 {% include '/objc/class.objctmp' %}
 {% endfor %}

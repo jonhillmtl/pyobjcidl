@@ -1,1 +1,0 @@
-* `python pogen.py --source-file=./example/1.poidl --objc-dest-dir=./example/egpyobjc/egpyobjc/ --py-dest-dir=./example/py/`
