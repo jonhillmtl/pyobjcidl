@@ -1,0 +1,8 @@
+import POFakeImport;
+
+class POImport
+{
+    int simple;
+};
+
+

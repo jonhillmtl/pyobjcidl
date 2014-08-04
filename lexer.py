@@ -37,6 +37,7 @@ class Lexer(object):
     reserved = {
            'function' : 'FUNCTION',
            'class' : 'CLASS',
+		   'import' : 'IMPORT',
            'int' : 'INT',
            'string' : 'STRING',
            'boolean' : 'BOOLEAN',

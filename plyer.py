@@ -6,6 +6,11 @@ def _dump_p(p):
 	for i in p:
 		print i
 	
+class Import(object):
+	name = ''
+	def __repr__(self):
+		return "import: %s" % (self.name)
+	
 class Function(object):		   
 	name = ''
 	arguments = []
@@ -33,13 +38,21 @@ class Member(object):
 		return "mem: %s %s" % (self.type, self.name)
 	
 class Plyer(object):
-	start = 'classlist'
+	start = 'file'
 	classes = []
 	functions = []
 	arguments = []
 	members = []
+	imports = []
 	errors = 0
-				 
+				
+	def clear(self):
+		self.classes = []
+		self.imports = []
+		self.functions = []
+		self.arguments = []
+		self.members = []
+		 
 	def p_argument_expr(self, p):
 		'''argument : INT ID
 				  | STRING ID'''
@@ -72,6 +85,16 @@ class Plyer(object):
 						| function 
 						| functionlist function'''
 		pass # _dump_p(p)
+		
+	def p_import_expr(self, p):
+		'import : IMPORT ID SEMICOLON'
+		i = Import()
+		i.name = p[1]
+		self.imports.append(i)
+		
+	def p_importlist_expr(self, p):
+		'''importlist : import 
+					  | importlist import'''
 		
 	def p_class_expr(self, p):
 		'class : CLASS ID LCURLY memberlist functionlist RCURLY SEMICOLON'
@@ -106,7 +129,11 @@ class Plyer(object):
 					  | member 
 					  | memberlist member'''
 		pass
-				
+		
+	def p_file_expr(self, p):
+		'''file : importlist classlist
+		       	| classlist'''
+			
 	def p_error(self, p):
 		print "Syntax error in input %s" % p
 

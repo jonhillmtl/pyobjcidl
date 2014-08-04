@@ -56,8 +56,10 @@ def output_objc(plyer, base, objcdir):
 	
 def poidlgen(sourcefile, pydestdir, objcdestdir):
 	plyer = Plyer()
-
+	plyer.clear()
+	
 	print("*** Generating for %s" % sourcefile)
+	
 	sf = open(sourcefile, 'r')
 	plyer.feed(sf.read())
 	sf.close()

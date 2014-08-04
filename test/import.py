@@ -5,15 +5,15 @@ import objc, ctypes, re
 import datetime
 NSObject = objc.lookUpClass("NSObject")
 
-class POMember(NSObject):
+class POImport(NSObject):
     
     simple = 0
 
     pass
 
 def main():
-    test_POMember = POMember.alloc().init()
-    print test_POMember
+    test_POImport = POImport.alloc().init()
+    print test_POImport
 
 if __name__ == "__main__":
     main()
