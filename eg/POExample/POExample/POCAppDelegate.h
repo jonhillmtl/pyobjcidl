@@ -1,5 +1,5 @@
 //
-//  main.m
+//  POCAppDelegate.h
 //  POExample
 //
 //  Created by Jon Hill on 2014-08-04.
@@ -8,7 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-int main(int argc, const char * argv[])
-{
-    return NSApplicationMain(argc, argv);
-}
+@interface POCAppDelegate : NSObject <NSApplicationDelegate>
+
+@property (assign) IBOutlet NSWindow *window;
+
+@end
